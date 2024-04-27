@@ -70,6 +70,11 @@
 
     .start-btn {
       margin-bottom: auto;
+      display: none;
+    }
+
+    .is-ios .start-btn {
+      display: unset;
     }
   </style>
 </head>
@@ -80,7 +85,7 @@
     <div class="compass-circle"></div>
     <div class="my-point"></div>
   </div>
-  <button class="start-btn">Start compass</button>
+  <button class="start-btn">Start compass (iOS only)</button>
 </body>
 <script>
   const compassCircle = document.querySelector(".compass-circle");
@@ -90,6 +95,9 @@
     navigator.userAgent.match(/(iPod|iPhone|iPad)/) &&
     navigator.userAgent.match(/AppleWebKit/);
 
+  if (isIOS) {
+    document.documentElement.classList.add("is-ios");
+  }
   function init() {
     startBtn.addEventListener("click", startCompass);
     navigator.geolocation.getCurrentPosition(locationHandler);
