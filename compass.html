@@ -76,6 +76,16 @@
     .is-ios .start-btn {
       display: unset;
     }
+
+    #elt-filter {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: red;
+      opacity: 0.5;
+    }
   </style>
 </head>
 
@@ -103,6 +113,36 @@
     } else {
       window.addEventListener("deviceorientationabsolute", handler, true);
     }
+    function addFilter() {
+      const eltFilter = mkElt("div");
+      eltFilter.id = "elt-filter";
+      document.body.appendChild(filter);
+    }
+  }
+
+  function mkElt(type, attrib, inner) {
+    var elt = document.createElement(type);
+
+    function addInner(inr) {
+      if (inr instanceof Element) {
+        elt.appendChild(inr);
+      } else {
+        const txt = document.createTextNode(inr.toString());
+        elt.appendChild(txt);
+      }
+    }
+    if (inner) {
+      if (inner.length && typeof inner != "string") {
+        for (var i = 0; i < inner.length; i++)
+          if (inner[i])
+            addInner(inner[i]);
+      } else
+        addInner(inner);
+    }
+    for (var x in attrib) {
+      elt.setAttribute(x, attrib[x]);
+    }
+    return elt;
   }
 
   function startCompass() {
