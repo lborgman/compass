@@ -1,0 +1,11 @@
+{
+    "name": "Compass (PWA)",
+    "display": "fullscreen",
+    "icons": [
+        {
+            "src": "./compass.svg",
+            "sizes": "any"
+        }
+    ],
+    "start_url": "./compass.html"
+}
