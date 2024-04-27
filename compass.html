@@ -95,14 +95,12 @@
     navigator.userAgent.match(/(iPod|iPhone|iPad)/) &&
     navigator.userAgent.match(/AppleWebKit/);
 
-  if (isIOS) {
-    document.documentElement.classList.add("is-ios");
-  }
   function init() {
-    startBtn.addEventListener("click", startCompass);
-    navigator.geolocation.getCurrentPosition(locationHandler);
-
-    if (!isIOS) {
+    if (isIOS) {
+      startBtn.addEventListener("click", startCompass);
+      document.documentElement.classList.add("is-ios");
+      navigator.geolocation.getCurrentPosition(locationHandler);
+    } else {
       window.addEventListener("deviceorientationabsolute", handler, true);
     }
   }
