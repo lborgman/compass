@@ -106,7 +106,7 @@
   </div>
   <div id="buttons">
     <button id="start-btn">Start compass (iOS only)</button>
-    <button id="btn-filter">Dark</button>
+    <button id="btn-filter">Dark/Light</button>
   </div>
 </body>
 <script>
@@ -125,8 +125,8 @@
     } else {
       window.addEventListener("deviceorientationabsolute", handler, true);
     }
-    const btnDark = document.getElementById("btn-dark");
-    btnDark.addEventListener("click", evt => {
+    const btnFilter = document.getElementById("btn-filter");
+    btnFilter.addEventListener("click", evt => {
       document.documentElement.classList.toggle("dark-theme");
     });
 
