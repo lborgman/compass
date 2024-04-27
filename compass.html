@@ -16,7 +16,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Document</title>
+  <title>Compass</title>
   <style>
     body {
       display: flex;
@@ -68,13 +68,18 @@
       transition: opacity 0.5s ease-out;
     }
 
-    .start-btn {
-      margin-bottom: auto;
+    #start-btn {
+      NOmargin-bottom: auto;
       display: none;
     }
 
-    .is-ios .start-btn {
+    .is-ios #start-btn {
       display: unset;
+    }
+
+    #buttons {
+      display: flex;
+      gap: 20px;
     }
 
     #elt-filter {
@@ -83,8 +88,12 @@
       left: 0;
       bottom: 0;
       right: 0;
-      background-color: red;
-      opacity: 0.5;
+      backdrop-filter: invert() brightness(0.7);
+      display: none;
+    }
+
+    .dark-theme #elt-filter {
+      display: unset;
     }
   </style>
 </head>
@@ -95,24 +104,32 @@
     <div class="compass-circle"></div>
     <div class="my-point"></div>
   </div>
-  <button class="start-btn">Start compass (iOS only)</button>
+  <div id="buttons">
+    <button id="start-btn">Start compass (iOS only)</button>
+    <button id="btn-filter">Dark</button>
+  </div>
 </body>
 <script>
   const compassCircle = document.querySelector(".compass-circle");
   const myPoint = document.querySelector(".my-point");
-  const startBtn = document.querySelector(".start-btn");
   const isIOS =
     navigator.userAgent.match(/(iPod|iPhone|iPad)/) &&
     navigator.userAgent.match(/AppleWebKit/);
 
   function init() {
     if (isIOS) {
-      startBtn.addEventListener("click", startCompass);
+      const btnStart = document.getElementById("start-btn");
+      btnStart.addEventListener("click", startCompass);
       document.documentElement.classList.add("is-ios");
       navigator.geolocation.getCurrentPosition(locationHandler);
     } else {
       window.addEventListener("deviceorientationabsolute", handler, true);
     }
+    const btnDark = document.getElementById("btn-dark");
+    btnDark.addEventListener("click", evt => {
+      document.documentElement.classList.toggle("dark-theme");
+    });
+
     addFilter();
     function addFilter() {
       const eltFilter = mkElt("div");
