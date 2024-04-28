@@ -1,5 +1,5 @@
 //========== Specific ====================================================
-const SW_VERSION = "0.1.001";
+const SW_VERSION = "0.1.003";
 // throw Error("Test worker error");
 const logColors = "color: green; background: yellow;";
 console.log(`%csw-worker-input.js ${SW_VERSION} is here`, logColors + " font-size: 20px;");
@@ -20,7 +20,8 @@ function errorHandlerAsyncEvent(asyncFun) {
 // https://www.npmjs.com/package/workbox-sw
 // importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.5.4/workbox-sw.js');
 // importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.5.4/workbox-sw.js');
-const urlWorkbox = 'https://storage.googleapis.com/workbox-cdn/releases/7.0.1/workbox-sw.js';
+const urlWorkbox = 'https://storage.googleapis.com/workbox-cdn/releases/6.5.4/workbox-sw.js';
+// const urlWorkbox = 'https://storage.googleapis.com/workbox-cdn/releases/7.0.1/workbox-sw.js';
 console.log(urlWorkbox);
 importScripts(urlWorkbox);
 
