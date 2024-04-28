@@ -6,3 +6,5 @@ I am just playing a bit with it.
 You can use my version here:
 
 https://lborgman.github.io/compass/compass.html
+
+It should now work offline (PWA).
