@@ -21,11 +21,18 @@
   <title>Compass PWA</title>
   <link rel="icon" type="image/svg+xml" href="./compass.svg">
 
+  <script>
+    navigator.serviceWorker.register('./sw-workbox.js');
+  </script>
   <style>
     body {
       display: flex;
       flex-direction: column;
       height: 100vh;
+    }
+
+    button {
+      cursor: pointer;
     }
 
     .compass {

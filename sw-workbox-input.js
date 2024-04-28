@@ -20,7 +20,9 @@ function errorHandlerAsyncEvent(asyncFun) {
 // https://www.npmjs.com/package/workbox-sw
 // importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.5.4/workbox-sw.js');
 // importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.5.4/workbox-sw.js');
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/7.0.1/workbox-sw.js');
+const urlWorkbox = 'https://storage.googleapis.com/workbox-cdn/releases/7.0.1/workbox-sw.js';
+console.log(urlWorkbox);
+importScripts(urlWorkbox);
 
 workbox.setConfig({
     debug: false

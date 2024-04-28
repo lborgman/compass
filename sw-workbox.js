@@ -20,13 +20,15 @@ function errorHandlerAsyncEvent(asyncFun) {
 // https://www.npmjs.com/package/workbox-sw
 // importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.5.4/workbox-sw.js');
 // importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.5.4/workbox-sw.js');
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/7.0.1/workbox-sw.js');
+const urlWorkbox = 'https://storage.googleapis.com/workbox-cdn/releases/7.0.1/workbox-sw.js';
+console.log(urlWorkbox);
+importScripts(urlWorkbox);
 
 workbox.setConfig({
     debug: false
 });
 
-workbox.precaching.precacheAndRoute([{"revision":"fdc43413bdf449ea1d83d1cc9aeca80f","url":"compass.html"},{"revision":"ff08b6ec6164530c3d8dbc69e35b6222","url":"compass.svg"},{"revision":"db1d7bdf08a6d2397224c8a49a83937f","url":"manifest-compass.json"},{"revision":"2951ecc84e4e5f6095c6dba39514e983","url":"workbox-config.js"}])
+workbox.precaching.precacheAndRoute([{"revision":"4ab40f09a6e82029c4c03683d17f098b","url":"compass.html"},{"revision":"ff08b6ec6164530c3d8dbc69e35b6222","url":"compass.svg"},{"revision":"db1d7bdf08a6d2397224c8a49a83937f","url":"manifest-compass.json"},{"revision":"2951ecc84e4e5f6095c6dba39514e983","url":"workbox-config.js"}])
 
 
 
