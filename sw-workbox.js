@@ -1,5 +1,5 @@
 //========== Specific ====================================================
-const SW_VERSION = "0.1.005";
+const SW_VERSION = "0.1.006";
 // throw Error("Test worker error");
 const logColors = "color: green; background: yellow;";
 console.log(`%csw-worker-input.js ${SW_VERSION} is here`, logColors + " font-size: 20px;");
@@ -29,7 +29,7 @@ workbox.setConfig({
     debug: false
 });
 
-workbox.precaching.precacheAndRoute([{"revision":"7d941089ceaf45463653dc252bf2f19c","url":"compass.html"},{"revision":"fabe1cad28c8a8247d69fa3968792fe5","url":"compass.svg"},{"revision":"2ea2bfd8a214313df7cb836d679d1d8d","url":"img/purepng.com-compass.png"},{"revision":"db1d7bdf08a6d2397224c8a49a83937f","url":"manifest-compass.json"},{"revision":"2951ecc84e4e5f6095c6dba39514e983","url":"workbox-config.js"}])
+workbox.precaching.precacheAndRoute([{"revision":"7d941089ceaf45463653dc252bf2f19c","url":"compass.html"},{"revision":"fdd55f8f8424bdbf10baa22f5d5b5069","url":"compass.svg"},{"revision":"db1d7bdf08a6d2397224c8a49a83937f","url":"manifest-compass.json"},{"revision":"2951ecc84e4e5f6095c6dba39514e983","url":"workbox-config.js"}])
 
 
 
